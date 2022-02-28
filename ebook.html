@@ -320,20 +320,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     return true;
   }
 
-})();
-     
-     if (/iPad|iPhone|iPod/.test(navigator.platform)) {
-   MktoForms2.whenReady(function (form) {
-      var formEl = form.getFormElem()[0];
-      
-      formEl.addEventListener("focus",function(e){
-            e.target.scrollIntoView({block: 'center'});
-      }, true)         
-   });
-}
-    //2022-02-28 hamada フリーアドレスのエラー即時
-    window.addEventListener('load', function(){
+    //2022-02-28 hamada フリーアドレスのエラー即時表示
+      window.addEventListener('load', function(){
         var input_email = document.getElementById("Email");
+        console.log("test");
 
         input_email.addEventListener("change",function(){
             MktoForms2.whenReady(function (form){
@@ -350,6 +340,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             });
         });
     });
+
+})();
+     
+     if (/iPad|iPhone|iPod/.test(navigator.platform)) {
+   MktoForms2.whenReady(function (form) {
+      var formEl = form.getFormElem()[0];
+      
+      formEl.addEventListener("focus",function(e){
+            e.target.scrollIntoView({block: 'center'});
+      }, true)         
+   });
+}
+
      
      
 </script>
