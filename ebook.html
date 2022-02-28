@@ -588,13 +588,13 @@ nav ul {
 		position: static
 	}
 }
-	.mktoForm > div:not(:last-child) > div.mktoFieldDescriptor.mktoFormCol > div.mktoFieldWrap.mktoRequiredField > div.mktoError{
-	    left: 0px!important;
-	    top: 65px!important;
-	}
-	.mktoForm > div:last-child > div.mktoFieldDescriptor.mktoFormCol > div.mktoFieldWrap.mktoRequiredField > div.mktoError{
-	    left: 0px!important;
-	    bottom: -20px!important;
-	}
+.mktoForm > div:not(:last-child) > div.mktoFieldDescriptor.mktoFormCol > div.mktoFieldWrap.mktoRequiredField > div.mktoError{
+    left: 0px!important;
+    top: 65px!important;
+}
+.mktoForm > div::last-child > div.mktoFieldDescriptor.mktoFormCol > div.mktoFieldWrap.mktoRequiredField > div.mktoError{
+    left: 0px!important;
+    top: 0px!important;
+}
 </style>
 </html>
