@@ -1,1 +1,64 @@
 
+<html>
+  <head> </head>
+  <body>
+    <select id="selectbox" onchange="change();">
+      <option value="all">all</option>
+      <option value="one">one</option>
+      <option value="two">two</option>
+    </select>
+    <div class="container">
+      <div class="item" data-category="one">
+        <h2>事例１</h2>
+        <p>テキスト１</p>
+      </div>
+      <div class="item" data-category="two">
+        <h2>事例２</h2>
+        <p>テキスト２</p>
+      </div>
+      <div class="item" data-category="one">
+        <h2>事例３</h2>
+        <p>テキスト３</p>
+      </div>
+      <div class="item" data-category="two">
+        <h2>事例４</h2>
+        <p>テキスト４</p>
+      </div>
+    </div>
+  </body>
+  <style>
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .item {
+      border: 8px solid black;
+      padding: 18px;
+      width: 30%;
+      margin: 18px;
+    }
+  </style>
+  <script>
+    function change() {
+      var item_elements = document.getElementsByClassName("item");
+      var selboxValue = document.getElementById("selectbox").value;
+
+      for (var i = 0; i < item_elements.length; i++) {
+        console.log(item_elements[i]);
+        // target属性があるか確認する
+        if (selboxValue === "all") {
+          item_elements[i].style.display = "block";
+        } else {
+          if (
+            item_elements[i].hasAttribute("data-category") &&
+            item_elements[i].getAttribute("data-category") === selboxValue
+          ) {
+            item_elements[i].style.display = "none";
+          } else {
+            item_elements[i].style.display = "block";
+          }
+        }
+      }
+    }
+  </script>
+</html>
