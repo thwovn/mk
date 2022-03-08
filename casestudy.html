@@ -1,8 +1,9 @@
-
 <html>
-  <head> </head>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
   <body>
-    <select id="selectbox" onchange="change();">
+    <select id="selectbox">
       <option value="all">all</option>
       <option value="one">one</option>
       <option value="two">two</option>
@@ -39,10 +40,24 @@
     }
   </style>
   <script>
+    $("#selectbox").change(function () {
+      var val = $("#selectbox").val();
+      console.log(val);
+      if (val === "all") {
+        $("[class='item']").show(function () {
+          "normal";
+        });
+      } else {
+        $("[data-category='" + val + "'][class='item']").show("normal");
+        $("[data-category!='" + val + "'][class='item']").hide("normal");
+      }
+    });
+    /*
     function change() {
       var item_elements = document.getElementsByClassName("item");
       var selboxValue = document.getElementById("selectbox").value;
 
+      $("[data-category='one']").css("display", "none"));
       for (var i = 0; i < item_elements.length; i++) {
         console.log(item_elements[i]);
         // target属性があるか確認する
@@ -60,5 +75,6 @@
         }
       }
     }
+    */
   </script>
 </html>
